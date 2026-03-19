@@ -1,0 +1,23 @@
+<div class="rooms-container">
+  <h2>Salas Disponibles</h2>
+
+  <div *ngIf="loading" class="loading">
+    Cargando salas...
+  </div>
+
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+
+  <div class="rooms-grid">
+    <div *ngFor="let room of rooms" class="room-card" (click)="selectRoom(room)">
+      <h3>{{ room.name }}</h3>
+      <div class="room-info">
+        <p><strong>Dificultad:</strong> {{ room.difficulty }}</p>
+        <p><strong>Duración:</strong> {{ room.duration }} minutos</p>
+      </div>
+      <p class="description">{{ room.description }}</p>
+      <button class="btn-play">Jugar Ahora</button>
+    </div>
+  </div>
+</div>
