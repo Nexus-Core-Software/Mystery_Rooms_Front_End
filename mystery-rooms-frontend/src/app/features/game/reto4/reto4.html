@@ -1,0 +1,142 @@
+<!-- HEADER -->
+<div class="puzzle-wrapper">
+  <div class="puzzle-header">
+    <span class="puzzle-tag">SIMULACIÓN · DECISIÓN IA</span>
+    <span class="puzzle-id">RETO 04 / 05 · PANEL DE IA · LABORATORIO VOSS</span>
+    <div class="timer-block">
+      <span class="timer-label">TIEMPO</span>
+      <span class="timer-val" [class.danger]="timerSegundos <= 600">{{ timerDisplay }}</span>
+    </div>
+  </div>
+
+  <!-- TITLE -->
+  <div class="puzzle-title-block">
+    <h1>Simulación de IA — Test de Lógica Estratégica</h1>
+    <p>El Algoritmo VOSS presenta tres dilemas éticos. Solo la secuencia exacta de decisiones que el Dr. Voss tomó al diseñar el sistema desbloqueará la clave biométrica del servidor.</p>
+  </div>
+
+  <!-- SCORE ROW -->
+  <div class="score-row">
+    <div class="score-item">
+      <span class="score-label">PUNTUACIÓN</span>
+      <span class="score-value">{{ puntaje }}</span>
+    </div>
+    <div class="score-item">
+      <span class="score-label">INTENTOS FALLIDOS</span>
+      <span class="score-value red">{{ fallosTotales }}</span>
+    </div>
+    <div class="score-item">
+      <span class="score-label">FRAGMENTO</span>
+      <span class="score-value amber">#4 · {{ completado ? 'DESBLOQUEADO' : 'LOCKED' }}</span>
+    </div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-header">
+    <span class="progress-label">EVALUACIÓN LÓGICA</span>
+    <span class="progress-count">{{ escenariosSueltos }} / 3 ESCENARIOS</span>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" [style.width.%]="progreso"></div>
+  </div>
+
+  <!-- VOSS-AI (global) -->
+  <div class="voss-ai">
+    <div class="voss-icon">🤖</div>
+    <div class="voss-content">
+      <div class="voss-name">
+        <span class="voss-dot"></span>
+        VOSS-AI · SISTEMA DE ASISTENCIA v2.4
+      </div>
+      <div class="voss-msg">
+        Bienvenido al protocolo de evaluación. Estos escenarios no son hipotéticos.
+        <em>Son mis memorias. Piensa como pensé yo.</em>
+      </div>
+    </div>
+  </div>
+
+  <!-- ESCENARIOS -->
+  <div class="scenarios-container" *ngIf="!completado">
+    <div
+      class="scenario-card"
+      *ngFor="let esc of escenarios; let i = index"
+      [class.solved]="estadoEscenarios[i] === 'correcto'">
+
+      <!-- TOPBAR -->
+      <div class="scenario-topbar">
+        <span class="scenario-num">{{ esc.label }}</span>
+        <span class="scenario-status" [class.solved]="estadoEscenarios[i] === 'correcto'">
+          {{ estadoEscenarios[i] === 'correcto' ? '✔ RESUELTO' : '● PENDIENTE' }}
+        </span>
+      </div>
+
+      <!-- BODY -->
+      <div class="scenario-body">
+        <!-- Pregunta -->
+        <div class="scenario-text">
+          <span class="scenario-q-label">▌ DILEMA ÉTICO — ALGORITMO VOSS v2.4</span>
+          <p>{{ esc.pregunta }}</p>
+        </div>
+
+        <!-- Dots de intentos fallidos -->
+        <div class="attempts-row">
+          <div
+            class="attempt-dot"
+            *ngFor="let dot of getDotsArray(i)"
+            [class.used]="true">
+          </div>
+        </div>
+
+        <!-- Opciones -->
+        <div class="options-list">
+          <button
+            class="option-btn"
+            *ngFor="let opt of esc.opciones; let oi = index"
+            [class.correct]="estadoEscenarios[i] === 'correcto' && opt.correcta"
+            [class.locked]="estadoEscenarios[i] === 'correcto' && !opt.correcta"
+            [class.wrong]="estadoEscenarios[i] === 'incorrecto'"
+            [disabled]="estadoEscenarios[i] === 'correcto'"
+            (click)="seleccionarOpcion(i, oi)">
+            <span class="opt-arrow">▶</span>
+            {{ opt.texto }}
+          </button>
+        </div>
+
+        <!-- Feedback -->
+        <div
+          class="feedback"
+          *ngIf="feedbackActual[i]"
+          [class.correct]="estadoEscenarios[i] === 'correcto'"
+          [class.wrong]="estadoEscenarios[i] === 'incorrecto'">
+          {{ feedbackActual[i] }}
+        </div>
+
+        <!-- VOSS msg por escenario -->
+        <div class="voss-msg-inline" *ngIf="estadoEscenarios[i] === 'correcto'">
+          🤖 {{ vossMsgActual[i] }}
+        </div>
+
+        <!-- Badge resuelto -->
+        <div class="solved-badge" *ngIf="estadoEscenarios[i] === 'correcto'">
+          <span>✔</span> Fragmento narrativo desbloqueado — Entrada de diario VOSS_{{ i + 1 }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANTALLA DE DESBLOQUEO -->
+  <div class="unlock-screen" *ngIf="completado">
+    <span class="unlock-icon">🔓</span>
+    <h2>Acceso Biométrico Concedido</h2>
+    <p>Has completado la evaluación con la secuencia de decisiones del Dr. Voss. El Fragmento de Algoritmo #4 está disponible.</p>
+    <div class="unlock-key">θ → CRITICAL</div>
+    <p class="voss-quote">
+      "Si lees esto, encontraste lo que dejé. Ahora sabes por qué desaparecí."<br>
+      <em>— Dr. Elián Voss</em>
+    </p>
+    <div class="score-final">
+      <span>Puntaje final: <strong>{{ puntaje }}</strong> pts</span>
+      <span>Intentos fallidos: <strong>{{ fallosTotales }}</strong></span>
+    </div>
+  </div>
+</div>
