@@ -122,18 +122,6 @@ export const routes: Routes = [
           name: 'Contactenos',
           showInSidebar: true
         }
-      },
-      {
-        path: 'api',
-        component: ApiComponent,
-        data: { 
-          authorities: [
-            IRoleType.superAdmin,
-            IRoleType.user,
-          ],
-          name: 'Api',
-          showInSidebar: true
-        }
       }
     ],
   },
