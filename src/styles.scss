@@ -1,0 +1,561 @@
+@custom-variant dark (&:is(.dark *));
+
+/* ═══════════════════════════════════════════════════
+   MYSTERY ROOMS — Design System
+   Basado en el prototipo visual del laboratorio
+   Paleta: Tecno-noir · Cyan · Amber · Deep Dark
+   ═══════════════════════════════════════════════════ */
+
+/* Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Exo+2:wght@300;400;600&display=swap');
+
+:root {
+  /* ── Fondos ── */
+  --background:        #030810;   /* bg-deep: negro azulado profundo */
+  --background-panel:  #07111f;   /* bg-panel: paneles y barras */
+  --card:              #0b1a2e;   /* bg-card: tarjetas y modales */
+
+  /* ── Texto ── */
+  --foreground:        #e0f7fa;   /* text-primary: blanco azulado */
+  --card-foreground:   #e0f7fa;
+  --popover-foreground:#e0f7fa;
+  --muted-foreground:  #607d8b;   /* text-dim: gris acero */
+
+  /* ── Colores de acento (del prototipo) ── */
+  --primary:           #00e5ff;   /* cyan principal */
+  --primary-dim:       #00bcd4;   /* cyan atenuado */
+  --primary-foreground:#030810;
+
+  --secondary:         #0b1a2e;
+  --secondary-foreground: #e0f7fa;
+
+  --accent:            #ffab00;   /* amber / ámbar */
+  --accent-foreground: #030810;
+
+  --destructive:       #ff1744;   /* red-alert */
+  --destructive-foreground: #e0f7fa;
+
+  --success:           #00e676;   /* green-ok */
+  --success-foreground:#030810;
+
+  --muted:             #0b1a2e;
+  --popover:           #07111f;
+
+  /* ── Bordes y ring ── */
+  --border:            rgba(0, 229, 255, 0.18);
+  --border-solid:      #0d2a3a;
+  --input:             #0b1a2e;
+  --ring:              #00e5ff;
+
+  /* ── Charts (mapeados a la paleta del prototipo) ── */
+  --chart-1:           #00e5ff;   /* cyan */
+  --chart-2:           #ffab00;   /* amber */
+  --chart-3:           #00e676;   /* green */
+  --chart-4:           #ff1744;   /* red */
+  --chart-5:           #ce93d8;   /* purple (reto 4) */
+
+  /* ── Sidebar ── */
+  --sidebar:           #030810;
+  --sidebar-foreground:#e0f7fa;
+  --sidebar-primary:   #00e5ff;
+  --sidebar-primary-foreground: #030810;
+  --sidebar-accent:    #ffab00;
+  --sidebar-accent-foreground:  #030810;
+  --sidebar-border:    rgba(0, 229, 255, 0.18);
+  --sidebar-ring:      #00e5ff;
+
+  /* ── Glows (box-shadow) ── */
+  --glow-cyan:  0 0 12px rgba(0, 229, 255, 0.55), 0 0 30px rgba(0, 229, 255, 0.2);
+  --glow-amber: 0 0 12px rgba(255, 171, 0, 0.55);
+  --glow-green: 0 0 12px rgba(0, 230, 118, 0.55);
+  --glow-red:   0 0 12px rgba(255, 23, 68, 0.55);
+
+  /* ── Radios ── */
+  --radius:    0.25rem;   /* border-radius cuadrado/técnico como en el prototipo */
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+}
+
+/* ── Theme tokens para Tailwind ── */
+@theme inline {
+  /* Tipografías del prototipo */
+  --font-sans:    'Exo 2', 'Exo 2 Fallback', sans-serif;
+  --font-display: 'Orbitron', 'Orbitron Fallback', monospace;
+  --font-mono:    'Share Tech Mono', 'Share Tech Mono Fallback', monospace;
+
+  /* Colores */
+  --color-background:              var(--background);
+  --color-background-panel:        var(--background-panel);
+  --color-foreground:              var(--foreground);
+  --color-card:                    var(--card);
+  --color-card-foreground:         var(--card-foreground);
+  --color-popover:                 var(--popover);
+  --color-popover-foreground:      var(--popover-foreground);
+  --color-primary:                 var(--primary);
+  --color-primary-dim:             var(--primary-dim);
+  --color-primary-foreground:      var(--primary-foreground);
+  --color-secondary:               var(--secondary);
+  --color-secondary-foreground:    var(--secondary-foreground);
+  --color-muted:                   var(--muted);
+  --color-muted-foreground:        var(--muted-foreground);
+  --color-accent:                  var(--accent);
+  --color-accent-foreground:       var(--accent-foreground);
+  --color-destructive:             var(--destructive);
+  --color-destructive-foreground:  var(--destructive-foreground);
+  --color-success:                 var(--success);
+  --color-success-foreground:      var(--success-foreground);
+  --color-border:                  var(--border);
+  --color-input:                   var(--input);
+  --color-ring:                    var(--ring);
+  --color-chart-1:                 var(--chart-1);
+  --color-chart-2:                 var(--chart-2);
+  --color-chart-3:                 var(--chart-3);
+  --color-chart-4:                 var(--chart-4);
+  --color-chart-5:                 var(--chart-5);
+  --radius-sm:  var(--radius-sm);
+  --radius-md:  var(--radius-md);
+  --radius-lg:  var(--radius-lg);
+  --radius-xl:  var(--radius-xl);
+  --color-sidebar:                      var(--sidebar);
+  --color-sidebar-foreground:           var(--sidebar-foreground);
+  --color-sidebar-primary:              var(--sidebar-primary);
+  --color-sidebar-primary-foreground:   var(--sidebar-primary-foreground);
+  --color-sidebar-accent:               var(--sidebar-accent);
+  --color-sidebar-accent-foreground:    var(--sidebar-accent-foreground);
+  --color-sidebar-border:               var(--sidebar-border);
+  --color-sidebar-ring:                 var(--sidebar-ring);
+}
+
+/* ══════════════════════════════════════════
+   BASE LAYER
+   ══════════════════════════════════════════ */
+@layer base {
+
+  /* ── Reset + defaults ── */
+  *, *::before, *::after {
+    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+  }
+
+  /* ── Body: fondo profundo + grid de fondo + scanlines ── */
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+    animation: fadeIn 0.8s ease-out both;
+
+    /* Grid tecno del prototipo */
+    background-image:
+      linear-gradient(rgba(0, 229, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 229, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-attachment: fixed;
+  }
+
+  /* Scanlines overlay (igual al prototipo) */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.06) 2px,
+      rgba(0, 0, 0, 0.06) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ── Tipografía ── */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.01em;
+    text-shadow: var(--glow-cyan);
+  }
+
+  h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; }
+  h2 { font-size: clamp(1.4rem, 3vw, 2.2rem); }
+  h3 { font-size: clamp(1rem, 2vw, 1.4rem); color: var(--primary); }
+
+  p, li, span {
+    font-family: 'Exo 2', sans-serif;
+    color: #b0bec5;
+  }
+
+  code, pre, kbd, samp {
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--primary);
+    font-size: 0.85em;
+  }
+
+  pre {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.2rem;
+  }
+
+  a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s, text-shadow 0.2s;
+
+    &:hover {
+      color: #ffffff;
+      text-shadow: var(--glow-cyan);
+    }
+  }
+
+  /* ── Scrollbar estilo del prototipo ── */
+  ::-webkit-scrollbar       { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--background); }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 229, 255, 0.25);
+    border-radius: 10px;
+    &:hover { background: rgba(0, 229, 255, 0.5); }
+  }
+
+  /* ── Selección de texto ── */
+  ::selection {
+    background: rgba(0, 229, 255, 0.25);
+    color: #ffffff;
+  }
+
+  /* ── Cards ── */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, box-shadow 0.3s;
+
+    /* Barra lateral cian característica del prototipo */
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: var(--primary);
+      opacity: 0.7;
+    }
+
+    &:hover {
+      border-color: rgba(0, 229, 255, 0.4);
+      box-shadow: var(--glow-cyan);
+      transform: none; /* sin scale — el prototipo no usa scale en cards */
+    }
+  }
+
+  /* ── Popover / Dropdown ── */
+  .popover {
+    background: var(--background-panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--glow-cyan);
+  }
+
+  /* ── Sidebar ── */
+  .sidebar {
+    background: var(--sidebar);
+    border-right: 1px solid var(--border);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── Inputs ── */
+  input, textarea, select {
+    background: var(--input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--foreground);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: var(--glow-cyan);
+    }
+
+    &::placeholder {
+      color: var(--muted-foreground);
+      letter-spacing: 0.08em;
+    }
+  }
+
+  /* ── Buttons ── */
+  button {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, color 0.2s;
+
+    /* Botón primario (cyan) */
+    &.btn-primary, &[data-variant="primary"] {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+
+      &:hover {
+        background: rgba(0, 229, 255, 0.1);
+        box-shadow: var(--glow-cyan);
+        color: #ffffff;
+      }
+
+      &:active { transform: scale(0.98); }
+    }
+
+    /* Botón accent (amber) */
+    &.btn-accent, &[data-variant="accent"] {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+
+      &:hover {
+        background: rgba(255, 171, 0, 0.12);
+        box-shadow: var(--glow-amber);
+        color: #ffffff;
+      }
+    }
+
+    /* Botón destructive */
+    &.btn-destructive, &[data-variant="destructive"] {
+      background: transparent;
+      border: 1px solid var(--destructive);
+      color: var(--destructive);
+
+      &:hover {
+        background: rgba(255, 23, 68, 0.1);
+        box-shadow: var(--glow-red);
+      }
+    }
+
+    /* Default fallback */
+    &:not([data-variant]):hover {
+      background: rgba(0, 229, 255, 0.08);
+      color: var(--primary);
+    }
+  }
+
+  /* ── Badges / labels estilo prototipo ── */
+  .badge {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.25rem 0.8rem;
+    background: rgba(0, 229, 255, 0.06);
+    color: var(--primary);
+    display: inline-block;
+  }
+
+  /* ── Progress bars ── */
+  progress, [role="progressbar"] {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+
+    &::-webkit-progress-bar   { background: rgba(255, 255, 255, 0.08); }
+    &::-webkit-progress-value {
+      background: linear-gradient(90deg, var(--primary), var(--success));
+      border-radius: 10px;
+    }
+  }
+
+  /* ── Tables ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.78rem;
+  }
+
+  th {
+    background: var(--background-panel);
+    color: var(--primary);
+    border-bottom: 1px solid var(--border);
+    padding: 0.6rem 1rem;
+    letter-spacing: 0.1em;
+    text-align: left;
+  }
+
+  td {
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+    color: #b0bec5;
+
+    &:hover { background: rgba(0, 229, 255, 0.03); }
+  }
+
+  tr:nth-child(even) td { background: rgba(0, 229, 255, 0.02); }
+
+  /* ── Alerts / Snackbars ── */
+  .success-snackbar {
+    background: rgba(0, 230, 118, 0.1);
+    border: 1px solid rgba(0, 230, 118, 0.35);
+    color: var(--success);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    border-radius: var(--radius);
+    border-left: 3px solid var(--success);
+    animation: fadeInDown 0.4s ease both;
+  }
+
+  .error-snackbar {
+    background: rgba(255, 23, 68, 0.1);
+    border: 1px solid rgba(255, 23, 68, 0.35);
+    color: var(--destructive);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    border-radius: var(--radius);
+    border-left: 3px solid var(--destructive);
+    animation: shakeX 0.4s ease both;
+  }
+
+  /* ── Dividers / separators ── */
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+
+  /* ── Focus visible accesible ── */
+  :focus-visible {
+    outline: 1px solid var(--primary);
+    outline-offset: 2px;
+    box-shadow: var(--glow-cyan);
+  }
+}
+
+/* ══════════════════════════════════════════
+   KEYFRAMES
+   ══════════════════════════════════════════ */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shakeX {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-6px); }
+  40%       { transform: translateX(6px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: var(--glow-cyan); }
+  50%       { box-shadow: 0 0 24px rgba(0, 229, 255, 0.8), 0 0 48px rgba(0, 229, 255, 0.3); }
+}
+
+@keyframes scanLine {
+  0%    { transform: scaleX(0); transform-origin: left; }
+  50%   { transform: scaleX(1); transform-origin: left; }
+  50.01%{ transform: scaleX(1); transform-origin: right; }
+  100%  { transform: scaleX(0); transform-origin: right; }
+}
+
+/* ══════════════════════════════════════════
+   UTILIDADES EXTRA (específicas del juego)
+   ══════════════════════════════════════════ */
+
+/* Cursor de lupa sobre objetos interactivos */
+.interactive { cursor: crosshair; }
+
+/* Texto con glow cian */
+.text-glow-cyan  { text-shadow: var(--glow-cyan); }
+.text-glow-amber { text-shadow: var(--glow-amber); }
+
+/* Borde con glow */
+.border-glow-cyan  { border-color: var(--primary)  !important; box-shadow: var(--glow-cyan); }
+.border-glow-amber { border-color: var(--accent)   !important; box-shadow: var(--glow-amber); }
+.border-glow-green { border-color: var(--success)  !important; box-shadow: var(--glow-green); }
+.border-glow-red   { border-color: var(--destructive) !important; box-shadow: var(--glow-red); }
+
+/* Texto parpadeante (alertas, cursores) */
+.blink { animation: blink 1s step-end infinite; }
+
+/* Elemento pulsante con glow (objetos del laboratorio al hacer hover) */
+.glow-pulse { animation: glowPulse 2s ease-in-out infinite; }
+
+/* Barra de escaneo inferior (como en el prototipo de la escena) */
+.scan-bar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary),
+    var(--accent),
+    var(--primary),
+    transparent
+  );
+  opacity: 0.5;
+  animation: scanLine 4s linear infinite;
+}
+
+/* Etiqueta de sección estilo prototipo */
+.section-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  color: var(--primary);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+/* Fondo con grid tecno (reutilizable en secciones) */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(0, 229, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Gradiente de fondo para radial (hero / panels especiales) */
+.bg-radial-cyan {
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(0, 229, 255, 0.1),
+    transparent 70%
+  );
+}
+
+.bg-radial-purple {
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(156, 39, 176, 0.15),
+    transparent 70%
+  );
+}

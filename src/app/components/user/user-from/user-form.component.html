@@ -1,0 +1,62 @@
+<form [formGroup]="userForm" class="row form">
+  <div>
+    <h2 class="mb-0">Configuración de usuario</h2>
+  </div>
+  <div class="mb-2">
+    <label class="mb-1" for="email">Correo Electronico*</label>
+    <input id="email" formControlName="email" type="email" class="form-control">
+    @if (userForm.controls['email'].invalid && (userForm.controls['email'].dirty || userForm.controls['email'].touched)) {
+      <p class="text-danger my-1">Email es requerido\</p>
+    }
+    @if (userForm.controls['email'].errors?.['email'] && (userForm.controls['email'].dirty || userForm.controls['email'].touched)) {
+      <p class="text-danger my-1">Correo Electronico Invalido</p>
+    }
+  </div>
+  <div class="mb-2">
+    <label class="mb-1" for="name">Nombre*</label>
+    <input id="name" formControlName="name" type="text" class="form-control">
+    @if (userForm.controls['name'].invalid && (userForm.controls['name'].dirty || userForm.controls['name'].touched)) {
+      <p class="text-danger my-1">Nombre es requerido</p>
+    }
+  </div>
+  <div class="mb-2">
+    <label class="mb-1" for="lastname">Apellido*</label>
+    <input id="lastname" formControlName="lastname" type="text" class="form-control">
+    @if (userForm.controls['lastname'].invalid && (userForm.controls['lastname'].dirty || userForm.controls['lastname'].touched)) {
+      <p class="text-danger my-1">Apellido es requerido</p>
+    }
+  </div>
+  <div class="mb-2">
+    <label class="mb-1" for="name">Contraseña</label>
+    <input  id="password" formControlName="password" type="password" class="form-control">
+    @if (userForm.controls['password'].invalid && (userForm.controls['password'].dirty || userForm.controls['password'].touched)) {
+      <p class="text-danger my-1">Contraseña es requerida</p>
+    }
+  </div>
+  <!--<div class="mb-2">
+    <label for="role" class="mb-1 p-right-5">Role*</label>
+    <select class="boxes" id="role" formControlName="role"><option *ngFor="let role of roles" [ngValue]="role">{{ role.name }}</option></select>
+    @if (userForm.controls['role'].invalid && (userForm.controls['role'].dirty || userForm.controls['role'].touched)) {
+      <p class="text-danger my-1">Role es requerido</p>
+    }
+  </div>-->
+
+  <div class="mb-2">
+    <div class="form-check form-check-inline">
+      <input formControlName="enabled"  mdbRadio class="form-check-input" type="radio" id="enabled-true" [value]="true"
+      />
+      <label class="form-check-label" for="enabled-true">Activo</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input formControlName="enabled"   class="form-check-input" type="radio" id="enabled-false" [value]="false"
+      />
+      <label class="form-check-label" for="enabled-false">Inactivo</label>
+    </div>
+    
+    <div class="d-flex justify-content-end">
+      <button (click)="callSave()" [disabled]="userForm.invalid" class="btn btn-purple" type="button">Guardar</button>
+    </div>
+  </div>
+  
+
+</form>

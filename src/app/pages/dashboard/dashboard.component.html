@@ -1,0 +1,114 @@
+<div class="dashboard">
+  
+    <!-- Hero Section -->
+    <section class="hero">
+      <h2>Explora Mystery Rooms AI</h2>
+      <p>Descubre y crea salas de misterio personalizadas con inteligencia artificial</p>
+      <button>Comenzar</button>
+    </section>
+  
+<!-- Features Section -->
+  <section id="features" class="features-section">
+    <div class="container">
+      <h2 class="section-title">Características Clave</h2>      
+      <div class="features-grid">
+        <div class="feature-item">
+          <i class="fa-solid fa-brain feature-icon"></i>
+          <h3 class="feature-title">Generación de Niveles AI</h3>
+          <p class="feature-description">Crea salas de misterio automáticamente usando algoritmos inteligentes.</p>
+        </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-users feature-icon"></i>
+          <h3 class="feature-title">Juega y Comparte</h3>
+          <p class="feature-description">Comparte tus salas con amigos o juega las creadas por otros usuarios.</p>
+        </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-lock feature-icon"></i>
+          <h3 class="feature-title">Seguridad y Privacidad</h3>
+          <p class="feature-description">Protege tus creaciones y datos personales de manera segura.</p>
+        </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-cloud feature-icon"></i>
+          <h3 class="feature-title">Almacenamiento en la Nube</h3>
+          <p class="feature-description">Guarda tus salas y accede a ellas desde cualquier dispositivo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+      
+  
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div>
+            <h2 class="gallery-title">Salas Destacadas</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" *ngFor="let image of images">
+              <img [src]="image.src" [alt]="image.alt" class="gallery-image" />
+            </div>
+        </div>
+    </section>
+  
+<!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title">Comentarios de Usuarios</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-item">
+          <p class="testimonial-text">"Mystery Rooms AI me permitió crear aventuras increíbles para mis amigos."</p>
+          <h3 class="testimonial-name">Laura M.</h3>
+          <p class="testimonial-profesion">Estudiante</p>
+        </div>
+        <div class="testimonial-item">
+          <p class="testimonial-text">"Es muy fácil de usar y los resultados son impresionantes."</p>
+          <h3 class="testimonial-name">Pedro G.</h3>
+          <p class="testimonial-profesion">Desarrollador</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!-- FAQ Section -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Preguntas Frecuentes</h2>
+
+      <div class="faq-item" (click)="toggleAnswer(1)" [ngClass]="{ active: activeQuestion === 1 }">
+        <div class="faq-question-container">
+          <h3 class="faq-question">¿Cómo creo una nueva sala?</h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+          </svg>
+        </div>
+        <p class="faq-answer" *ngIf="activeQuestion === 1">
+          Ingresa al panel de creación, selecciona el tipo de sala y personaliza los elementos disponibles. Guarda tu sala cuando termines.
+        </p>
+      </div>
+
+      <div class="faq-item" (click)="toggleAnswer(2)" [ngClass]="{ active: activeQuestion === 2 }">
+        <div class="faq-question-container">
+          <h3 class="faq-question">¿Puedo compartir mis salas con otros?</h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+          </svg>
+        </div>
+        <p class="faq-answer" *ngIf="activeQuestion === 2">
+          Sí, puedes generar un enlace para compartir tus salas con otros jugadores.
+        </p>
+      </div>
+
+    </div>
+  </section>
+      
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="ready-section">
+            <h2>¿Listo para crear tu primera sala?</h2>
+            <p>
+            Crea, comparte y juega en Mystery Rooms AI. Cada sala es una nueva aventura esperando ser descubierta.
+            </p>
+            <button (click)="mysterysRooms()">Descubre Mystery Rooms AI</button>
+        </div>
+               
+    </section>
+  </div>

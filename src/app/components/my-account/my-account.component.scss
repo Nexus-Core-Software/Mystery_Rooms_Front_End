@@ -1,0 +1,51 @@
+/* Estilo para el componente My Account */
+.profile-media {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+
+        i {
+            color: white;
+            margin-right: 10px;
+        }
+
+        .media-body {
+            color: white; /* El texto del usuario será blanco */
+            span {
+                color: white;
+                display: flex;
+                align-items: center;
+            
+                i {
+                    margin-left: 5px; /* Espacio entre el texto y el ícono */
+                }
+            }
+        }
+    }
+
+    ul.profile-dropdown {
+    background-color: black; /* Fondo negro para la lista */
+    padding: 0;
+    margin: 0;
+
+    li {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        color: white; /* El texto será blanco */
+        transition: background-color 0.3s;
+
+        &:hover {
+        background-color: #333; /* Fondo gris oscuro al pasar el cursor */
+        }
+
+        i {
+        color: white;
+        margin-right: 10px; /* Espacio a la derecha del ícono */
+        }
+
+        span {
+        color: white;
+        }
+    }
+}

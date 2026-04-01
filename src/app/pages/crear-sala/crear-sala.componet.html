@@ -1,0 +1,60 @@
+<div class="crear-sala">
+  <h1>Crear Nueva Sala</h1>
+  <p>Configura los parámetros de tu sala de escape virtual.</p>
+
+  <!-- Mensajes de éxito/error -->
+  <div *ngIf="submitStatus === 'success'" class="alert success">
+    Sala creada exitosamente
+  </div>
+  <div *ngIf="submitStatus === 'error'" class="alert error">
+    Error al crear la sala. Intenta de nuevo.
+  </div>
+
+  <form (ngSubmit)="handleSubmit()">
+    <!-- Nombre de la sala -->
+    <label>
+      Nombre de la sala
+      <input [(ngModel)]="formData.name" name="name" placeholder="Ej: La Mansión del Terror" />
+    </label>
+    <div *ngIf="errors.name" class="error">{{ errors.name }}</div>
+
+    <!-- Número máximo de jugadores -->
+    <label>
+      Número máximo de jugadores: {{ formData.maxPlayers }}
+      <input type="range" [(ngModel)]="formData.maxPlayers" name="maxPlayers" min="2" max="10" />
+    </label>
+    <div *ngIf="errors.maxPlayers" class="error">{{ errors.maxPlayers }}</div>
+
+    <!-- Dificultad -->
+    <label>
+      Nivel de dificultad
+      <select [(ngModel)]="formData.difficulty" name="difficulty">
+        <option value="facil">Fácil</option>
+        <option value="medio">Medio</option>
+        <option value="dificil">Difícil</option>
+      </select>
+    </label>
+
+    <!-- Tiempo límite -->
+    <label>
+      Tiempo límite: {{ formData.timeLimit }} minutos
+      <input type="range" [(ngModel)]="formData.timeLimit" name="timeLimit" min="15" max="120" step="5" />
+    </label>
+
+    <!-- Botón -->
+    <button type="submit" [disabled]="isSubmitting">
+      {{ isSubmitting ? 'Creando...' : 'Crear Sala' }}
+    </button>
+  </form>
+
+  <!-- Modal de confirmación -->
+  <div *ngIf="showConfirmModal" class="modal">
+    <h2>Confirmar creación de sala</h2>
+    <p>
+      ¿Deseas crear la sala "{{ formData.name }}" con {{ formData.maxPlayers }} jugadores,
+      dificultad {{ difficultyLabels[formData.difficulty] }} y {{ formData.timeLimit }} minutos de tiempo límite?
+    </p>
+    <button (click)="handleConfirm()">Crear Sala</button>
+    <button (click)="showConfirmModal = false">Cancelar</button>
+  </div>
+</div>

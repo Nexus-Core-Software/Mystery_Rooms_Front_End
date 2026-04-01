@@ -1,0 +1,73 @@
+<div class="login-container">
+  <div class="d-flex align-items-center justify-content-center h-100">
+    <div class="login-card">
+      <div class="w-100">
+        <div class="login-main">
+          <form (ngSubmit)="handleSignup($event)" autocomplete="off" #frm="ngForm">
+            <div class="mb-2">
+              <h2 class="h5">Registrarse</h2>
+              <small style="color: #e0eafc">Ingrese sus datos para empezar</small>
+            </div>
+
+            <div class="d-flex align-items-center mb-2">
+              <div class="form-group px-1">
+                <label for="name" class="form-label mb-1">Nombre</label>
+                <input #name="ngModel" type="text" class="form-control form-control-sm" id="name" name="name"
+                  placeholder="First Name" [(ngModel)]="user.name" [ngClass]="{
+                    'is-invalid': name.invalid && name.touched,
+                    'is-valid': name.valid && name.touched
+                  }" required aria-describedby="nameHelp" />
+                <div *ngIf="name.invalid" class="invalid-feedback">Por favor ingrese un nombre valido</div>
+              </div>
+              <div class="form-group px-1">
+                <label for="lastname" class="form-label mb-1">Apellido</label>
+                <input #lastname="ngModel" type="text" class="form-control form-control-sm" id="lastname" name="lastname"
+                  placeholder="Last Name" [(ngModel)]="user.lastname" [ngClass]="{
+                    'is-invalid': lastname.invalid && lastname.touched,
+                    'is-valid': lastname.valid && lastname.touched
+                  }" required aria-describedby="lastnameHelp" />
+                <div *ngIf="lastname.invalid" class="invalid-feedback">Por favor ingrese un apellido valido</div>
+              </div>
+            </div>
+
+            <div class="form-group mb-2">
+              <label for="email" class="form-label mb-1">Correo Electronico</label>
+              <input #email="ngModel" type="email" class="form-control form-control-sm" id="email" name="email"
+                placeholder="agent@gmail.com" [(ngModel)]="user.email" [ngClass]="{
+                  'is-invalid': email.invalid && email.touched,
+                  'is-valid': email.valid && email.touched
+                }" required aria-describedby="emailHelp" />
+              <div *ngIf="email.invalid" class="invalid-feedback">Por favor ingrese un correo valido</div>
+            </div>
+
+            <div class="form-group mb-2">
+              <label for="password" class="form-label mb-1">Contraseña</label>
+              <input #password="ngModel" type="password" class="form-control form-control-sm" id="password" name="password"
+                placeholder="*****" [(ngModel)]="user.password" required />
+              <div *ngIf="password.invalid && password.touched" class="invalid-feedback">Por favor ingrese una contraseña valida</div>
+            </div>
+            
+            <div class="form-group mb-2">
+              <label for="confirmPassword" class="form-label mb-1">Confirmacion de Contraseña</label>
+              <input #confirmPassword="ngModel" type="password" class="form-control form-control-sm" id="confirmPassword" name="confirmPassword"
+                placeholder="*****" [(ngModel)]="user.confirmPassword" required />
+              <div *ngIf="confirmPassword.invalid && confirmPassword.touched" class="invalid-feedback">Por favor confirme su contraseña</div>
+              <div *ngIf="user.password !== user.confirmPassword && confirmPassword.touched" class="invalid-feedback">Passwords do not match</div>
+            </div>            
+
+            <div class="form-group mb-3">
+              <button class="btn btn-purple btn-block w-100" type="submit">Registrarse</button>
+              <div *ngIf="signUpError" class="text-danger">{{signUpError}}</div>
+              <div *ngIf="validSignup" class="text-success">Usuario registrado, por favor vaya a Inicio de Sesion</div>
+            </div>
+
+            <div class="text-center">
+              <span>¿ Ya tienes cuenta registrada ? </span>
+              <a href="/login" style="color: blueviolet;">Inicio de Sesion</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

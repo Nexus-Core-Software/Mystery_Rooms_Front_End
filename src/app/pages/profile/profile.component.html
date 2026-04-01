@@ -1,0 +1,73 @@
+<div class="profile-edit-container">
+  <div class="profile-card">
+    <div class="profile-card-content">
+      <div class="avatar-section">
+        <!-- Vista previa de la imagen -->
+        <img [src]="avatarUrl" alt="Foto de perfil" class="avatar" />
+      </div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="username"><i class="bi bi-person"></i> Nombre de usuario</label>
+          <input 
+            type="text" 
+            id="username" 
+            placeholder="{{profileService.user$().name}} {{profileService.user$().lastname}}" 
+            readonly
+          />
+        </div>
+        <div class="form-group">
+          <label for="email"><i class="bi bi-envelope"></i> Correo electrónico</label>
+          <input 
+            type="email" 
+            id="email" 
+            placeholder="{{profileService.user$().email}}" 
+            readonly
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone"><i class="bi bi-phone"></i> Número de teléfono</label>
+          <input 
+            type="tel" 
+            id="phone" 
+            placeholder="{{profileService.user$().phoneNumber}}" 
+            readonly
+          />
+        </div>
+        <div class="form-group">
+          <label for="address"><i class="bi bi-geo-alt-fill"></i> Dirección</label>
+          <input 
+            type="text" 
+            id="address" 
+            placeholder="{{profileService.user$().address}}" 
+            readonly
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lastUpdate"><i class="bi bi-hdd-stack"></i> Última actualización</label>
+        <input 
+          type="text" 
+          id="lastUpdate" 
+          placeholder="{{profileService.user$().updatedAt | date:'dd/MM/YYYY'}}" 
+          readonly
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #updateProfileModal>
+  <app-modal 
+    [hideFooter]="true"
+  >
+    <div>
+      <app-profile-update
+        [profileForm]="profileForm"
+        (callUpdateMethod)="updateProfile($event)"
+      />
+    </div>
+  </app-modal>
+</ng-template>
+
+<!--  -->

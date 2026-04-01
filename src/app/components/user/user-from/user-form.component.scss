@@ -1,0 +1,80 @@
+.add-user-container {
+    padding: 30px 0px;
+}
+
+
+form, .container {
+    background-color: #1F2937; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+h2 {
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: #1F2937; 
+}
+  
+
+label {
+    color:#ffffff;
+    font-size: 15px; 
+}
+
+.form-check-input::before,
+.form-check-input::after {
+    content: none; /* Remove the pseudo-elements */
+    display: none; /* Ensure they're not rendered */
+}
+/* Custom style for the radio button dot */
+.form-check-input {
+    appearance: none; /* Remove default browser styles */
+    border: 2px solid #8F34E6;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+
+}
+
+/* Style for the checked state */
+.form-check-input:checked {
+    background-color: #8F34E6;
+    border-color: #8F34E6;
+}
+
+
+
+.btn-purple {
+    background-color: #8F34E6;
+    color: #ffff; 
+    font-size: 15px; 
+
+    &:hover {
+        background-color: rgb(174, 114, 212);
+      }
+}
+
+input, textarea, .boxes { 
+    background-color: #999999; /* Light grey background */ 
+    color: #333333 !important; /* Dark grey text color */ 
+    border: 1px solid #8F34E6;
+    padding: 8px; /* Padding inside the input box */ 
+    border-radius: 4px
+}
+
+.p-right-5 {
+  padding-right: 5px;
+}
+  
+  
+  
+
+  
