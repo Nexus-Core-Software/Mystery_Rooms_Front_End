@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import NodePuzzle from '../games/NodePuzzle/NodePuzzle.jsx'
+import NodePuzzle from '../pages/NodePuzzle/NodePuzzle.jsx'
 import '../styles/PuzzleRoom.css'
 
 function PuzzleRoom({ roomData, onExit }) {

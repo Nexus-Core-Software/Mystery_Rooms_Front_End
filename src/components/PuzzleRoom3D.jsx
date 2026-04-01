@@ -17,7 +17,7 @@
 import { useEffect, useRef, useState, useMemo } from 'react'
 import * as THREE from 'three'
 import { PointerLockControls } from 'three/examples/jsm/controls/PointerLockControls.js'
-import NodePuzzle from '../games/NodePuzzle/NodePuzzle.jsx'
+import NodePuzzle from '../pages/NodePuzzle/NodePuzzle.jsx'
 import {
   createScene,
   createFloor,
