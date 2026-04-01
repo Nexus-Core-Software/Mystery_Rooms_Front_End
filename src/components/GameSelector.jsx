@@ -69,33 +69,6 @@ function GameSelector({ onSelectGame }) {
           onClick={() => onSelectGame('joinRoom')}
         />
       </div>
-
-      {/* ============ Otros Modos ============ */}
-      <GameButton
-        label="Modo Prueba Multijugador"
-        icon="🧪"
-        color="yellow"
-        onClick={() => onSelectGame('multiPlayerTest')}
-      />
-
-      {/* ============ Juegos Individuales ============ */}
-      <div style={{ marginTop: '30px', borderTop: '1px solid #666', paddingTop: '20px' }}>
-        <h2 style={{ color: '#aaa', fontSize: '14px', marginBottom: '15px' }}>Juegos Individuales</h2>
-        
-        <GameButton
-          label="Puzzle de Nodos"
-          icon="🧩"
-          color="gray"
-          onClick={() => onSelectGame('nodePuzzle')}
-        />
-        
-        <GameButton
-          label="Escena 3D First Person"
-          icon="🏃"
-          color="gray"
-          onClick={() => onSelectGame('firstPerson')}
-        />
-      </div>
     </div>
   )
 }
