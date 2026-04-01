@@ -1,0 +1,47 @@
+.footer {
+    background-color: black !important;
+    padding: 20px 0;
+    font-size: 14px;
+  }
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+  
+    .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+      background: linear-gradient(to right, #4a90e2, #a64ca6);
+      -webkit-background-clip: text;
+      color: transparent;
+      min-width: 250px;
+    }
+  
+    .social-container {
+      max-width: 250px;
+      display: flex;
+      justify-content: center; 
+    }
+  
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+  
+    .social-icons svg {
+      width: 20px;
+      height: 20px;
+      fill: #a64ca6;
+      cursor: pointer;
+    }
+  
+    .copyright {
+      font-size: 14px;
+      color: #ffffff;
+      min-width: 250px;
+      text-align: right;
+      margin-bottom: 0;
+    }
+  }

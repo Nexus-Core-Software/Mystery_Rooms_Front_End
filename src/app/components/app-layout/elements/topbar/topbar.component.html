@@ -1,0 +1,30 @@
+<header class="header p-6 ms-auto">
+  <div class="container nav-menus">
+    <a routerLink="/app/dashboard"><h1 class="logo">Mysterys Rooms AI</h1></a>
+    <nav>
+      <ul>
+      
+        @for (route of permittedRoutes; track $index) {
+          @if (route.data && route.data['showInSidebar']) {
+          <li class="sidebar-list">
+            <a
+              routerLink="{{route.path}}"
+              routerLinkActive="active"
+              class="sidebar-link sidebar-title"
+            >
+                <span>{{route.data['name']}}</span>
+              </a>
+            </li>
+          }
+        }
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <ul class="nav-menus mb-0">
+        <li class="profile-nav onhover-dropdown pe-0 py-0">
+          <app-my-account></app-my-account>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>

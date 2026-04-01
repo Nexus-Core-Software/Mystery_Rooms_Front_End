@@ -1,0 +1,44 @@
+<div class="table-container table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Correo Electronico</th>
+        <th scope="col">Creacion</th>
+        <th scope="col">Actualizacion</th>
+        <th scope="col">Role</th>
+        <th scope="col">Status</th>
+        <th class="text-center" scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of users; track $index) {
+        <tr>
+          <th scope="row">{{item.id}}</th>
+          <td>{{item.name}}</td>
+          <td>{{item.lastname}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.createdAt | date: 'dd/MM/yyyy HH:mm'}}</td>
+          <td>{{item.updatedAt | date: 'dd/MM/yyyy HH:mm'}}</td>
+          <td>{{item.role?.name}}</td>
+          <!--<td>{{item.enabled}}</td>-->
+          <td>{{ item.enabled ? 'Activo' : 'Inactivo' }}</td> <!--? checks value-->          
+          <td>
+            <button *ngIf="item.role?.name !== 'SUPER_ADMIN'" (click)=" callModalAction.emit(item);" class="btn me-2 btn-blue" type="button"><i class="fas fa-pen"></i></button>
+            <button *ngIf="item.role?.name !== 'SUPER_ADMIN'" (click)="callDeleteAction.emit(item)" class="btn btn-purple " type="button"><i class="fas fa-trash"></i></button>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="7">
+            <div class="d-flex justify-content-center align-items-center w-100">
+              <p class="mb-0">Aun no existen usuarios registrado</p>
+            </div>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

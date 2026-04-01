@@ -1,0 +1,298 @@
+.dashboard {
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: white;
+  font-family: Arial, sans-serif;
+  .hero {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: linear-gradient(to bottom, #000000, #111828); // Degradado oscuro para el fondo
+      color: white;
+      font-family: 'Arial', sans-serif;
+    h2 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #ffffff; // Blanco para el título
+      margin-bottom: 1.5rem;
+    }
+    p {
+      font-size: 1.25rem;
+      color: #f4f4f4; // Gris claro para el subtítulo
+      margin-bottom: 2rem;
+    }
+    button {
+      background-color: #8F34E6; // Morado, color principal de MagicBooth
+      padding: 0.75rem 3rem;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #7a2cc4; // Un tono morado más oscuro para el hover
+      }
+    }
+  }
+
+  .features-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(to bottom, #111828, #111828); // Degradado oscuro para el fondo
+    color: #fff;
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      text-align: center;
+      color: #fff;
+      margin-top: 3rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+
+      .feature-item {
+        background: #202938; // Fondo de las tarjetas en tono gris oscuro
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra sutil para dar profundidad
+        transition: transform 0.3s ease;
+        color: #fff; // El texto dentro de las tarjetas será blanco
+
+        &:hover {
+          transform: translateY(-5px); // Efecto de movimiento hacia arriba al pasar el mouse
+        }
+
+        .feature-icon {
+          font-size: 3rem;
+          color: #8F34E6; // Iconos en el color morado de MagicBooth para destacar
+          margin-bottom: 1rem;
+        }
+
+        .feature-title {
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: #fff; // Título de la característica en blanco
+          margin-bottom: 0.5rem;
+        }
+
+        .feature-description {
+          font-size: 1rem;
+          color: #ccc; // Texto de la descripción en gris claro para mejor contraste
+        }
+      }
+    }
+  }
+
+  // Estilos para el contenido de la galería en pantalla completa
+  #gallery {
+    padding: 4rem 2rem;
+    background-color: #000000;
+    min-height: 10 rem;
+
+    .gallery-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      color: #ffffff;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+
+      .gallery-item {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+    }
+  }
+
+  .testimonials-section {
+    padding: 4rem 2rem;
+    background-color: #111828;
+    text-align: center;
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      color: #ffffff;
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 3rem;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-item {
+      background: #202938;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .testimonial-name {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 0.2rem;
+        text-align: left;
+      }
+
+      .testimonial-text {
+        font-size: 1rem;
+        font-style: italic;
+        color: #ffffff;
+        line-height: 1.6;
+        text-align: left;
+      }
+
+      .testimonial-profesion {
+        font-size: 0.9rem;
+        color: #888;
+        text-align: left;
+      }
+    }
+  }
+
+  .faq-section {
+    padding: 2rem 1rem;
+    background-color: #202938;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  .faq-item {
+    background-color: #384152;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column; /* Cambia a columna para apilar la respuesta debajo */
+  }
+
+  .faq-question-container {
+    display: flex; /* Alinea la pregunta y el icono en una fila */
+    align-items: center;
+  }
+  
+  .faq-question {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    transition: color 0.3s ease;
+    margin-right: 10px;
+  }
+
+  .faq-item svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item.active svg {
+    transform: rotate(180deg); /* Icono rotado al activar la pregunta */
+  }
+  
+  .faq-answer {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-top: 2rem; /* Espacio entre la pregunta y la respuesta */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+  }
+  
+  .faq-item.active .faq-answer {
+    max-height: 200px;
+    opacity: 1;
+  }
+
+  .ready-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to bottom,#111828, #000000); // Degradado oscuro para el fondo
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    h2 {
+      font-size: 2.5rem;
+      color: #ffffff; // Título en blanco para resaltar
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+    }
+  
+    p {
+      font-size: 1.2em;
+      color: #f4f4f4; // Texto más claro para un buen contraste
+      margin-bottom: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2rem;
+
+    }
+  
+    button {
+      padding: 12px 24px;
+      font-size: 1em;
+      color: #fff;
+      background-color: #8F34E6; // Color morado, el principal de MagicBooth
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-bottom: 3rem;
+  
+      &:hover {
+        background-color: #7a2cc4; // Un tono más oscuro para el hover
+      }
+    }
+  }  
+}

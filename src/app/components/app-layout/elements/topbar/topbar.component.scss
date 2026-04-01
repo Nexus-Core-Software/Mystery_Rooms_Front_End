@@ -1,0 +1,73 @@
+.header {
+  background-color: #07111f; // Fondo de paneles y barras
+  margin-top: 2rem;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-shadow: 0 0 12px rgba(0,229,255,0.55), 0 0 30px rgba(0,229,255,0.2);
+      margin: 0;
+    }
+
+    nav {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+
+      ul {
+        display: flex;
+        gap: 2rem;
+        margin: 0;
+        list-style-type: none;
+
+        li a {
+          font-family: 'Share Tech Mono', monospace;
+          text-transform: uppercase;
+          letter-spacing: 0.15em;
+          color: #b0bec5;
+          text-decoration: none;
+          transition: color 0.3s ease, text-shadow 0.3s ease;
+
+          &:hover {
+            color: #00e5ff;
+            text-shadow: 0 0 12px rgba(0,229,255,0.55);
+          }
+        }
+      }
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      ul {
+        display: flex;
+        gap: 2rem;
+        margin: 0;
+        list-style-type: none;
+
+        li a {
+          font-family: 'Share Tech Mono', monospace;
+          text-transform: uppercase;
+          letter-spacing: 0.15em;
+          color: #b0bec5;
+          text-decoration: none;
+          transition: color 0.3s ease, text-shadow 0.3s ease;
+
+          &:hover {
+            color: #ffab00; // Amber para resaltar acciones en nav-right
+            text-shadow: 0 0 12px rgba(255,171,0,0.55);
+          }
+        }
+      }
+    }
+  }
+}

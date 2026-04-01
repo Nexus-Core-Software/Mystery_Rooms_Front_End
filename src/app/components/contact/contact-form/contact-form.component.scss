@@ -1,0 +1,152 @@
+.contact-section {
+  padding: 6rem 1rem;
+  background-color: #030810; // Fondo principal
+  min-height: 100vh;
+
+  .section-title {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(0,229,255,0.55);
+    margin-bottom: 2rem;
+  }
+
+  .contact-form-col, .contact-info-col {
+    background: #0b1a2e; // Fondo tarjetas
+    padding: 2rem;
+    border: 1px solid rgba(0,229,255,0.18);
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      border-color: rgba(0,229,255,0.4);
+      box-shadow: 0 0 12px rgba(0,229,255,0.55);
+    }
+  }
+
+  h1, h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(0,229,255,0.55);
+  }
+
+  label {
+    font-family: 'Share Tech Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 12px;
+    color: #e0f7fa;
+  }
+
+  .form-control {
+    background-color: #0b1a2e;
+    color: #e0f7fa;
+    border-radius: 4px;
+    border: 1px solid rgba(0,229,255,0.18);
+    padding: 0.75rem;
+    font-family: 'Share Tech Mono', monospace;
+
+    &::placeholder {
+      color: #607d8b;
+    }
+
+    &:focus {
+      border-color: #00e5ff;
+      outline: none;
+      box-shadow: 0 0 12px rgba(0,229,255,0.55);
+    }
+  }
+
+  .text-danger {
+    font-size: 0.85rem;
+    color: #ff1744; // Rojo alerta
+  }
+
+  .btn-purple {
+    background-color: #ce93d8; // Morado IA
+    color: #ffffff;
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Share Tech Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      background-color: rgba(206,147,216,0.2);
+      box-shadow: 0 0 12px rgba(206,147,216,0.55);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  .contact-item {
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    color: #b0bec5;
+
+    i {
+      color: #00e5ff; // Cyan dominante
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+    }
+
+    span {
+      color: #ffffff;
+    }
+  }
+}
+
+.container {
+  background-color: #07111f; // Fondo paneles
+}
+
+.footer {
+  background-color: #07111f;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+
+  .logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(0,229,255,0.55);
+    min-width: 250px;
+  }
+
+  .social-icons svg {
+    width: 20px;
+    height: 20px;
+    fill: #ce93d8; // Morado IA
+    cursor: pointer;
+    transition: fill 0.3s ease;
+
+    &:hover {
+      fill: #00e5ff;
+    }
+  }
+
+  .copyright {
+    font-size: 14px;
+    color: #b0bec5;
+    min-width: 250px;
+    text-align: right;
+    margin-bottom: 0;
+  }
+}

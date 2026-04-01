@@ -1,0 +1,137 @@
+// 🎨 Paleta Mystery Rooms
+$primary-bg-color: #030810;   // Fondo principal
+$panel-bg-color: #07111f;     // Paneles y barras
+$card-bg-color: #0b1a2e;      // Tarjetas y modales
+
+$primary-text-color: #e0f7fa; // Texto principal
+$secondary-text-color: #b0bec5;
+$muted-text-color: #607d8b;
+$title-text-color: #ffffff;
+
+$color-cyan: #00e5ff;
+$color-cyan-muted: #00bcd4;
+$color-amber: #ffab00;
+$color-success: #00e676;
+$color-danger: #ff1744;
+$color-purple-ai: #ce93d8;
+
+// Bordes y glows
+$border-standard: rgba(0, 229, 255, 0.18);
+$border-hover: rgba(0, 229, 255, 0.4);
+$glow-cyan: 0 0 12px rgba(0,229,255,0.55), 0 0 30px rgba(0,229,255,0.2);
+
+// Layout general
+.page-wrapper {
+  background-color: $primary-bg-color;
+  color: $primary-text-color;
+
+  .page-title h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    color: $title-text-color;
+    text-shadow: $glow-cyan;
+  }
+}
+
+// Topbar
+app-topbar {
+  background-color: $panel-bg-color;
+  color: $primary-text-color;
+}
+
+// Sidebar
+.sidebar-wrapper {
+  background-color: $panel-bg-color;
+  color: $primary-text-color;
+
+  a {
+    font-family: 'Share Tech Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: $secondary-text-color;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+
+    &:hover {
+      color: $color-cyan;
+      text-shadow: $glow-cyan;
+    }
+  }
+}
+
+// Footer
+.footer {
+  background-color: $panel-bg-color;
+  padding: 20px 0;
+  color: $primary-text-color;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+
+  .logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: $title-text-color;
+    text-shadow: $glow-cyan;
+    min-width: 250px;
+  }
+
+  .social-icons svg {
+    width: 20px;
+    height: 20px;
+    fill: $color-purple-ai;
+    cursor: pointer;
+    transition: fill 0.3s ease;
+
+    &:hover {
+      fill: $color-cyan;
+    }
+  }
+
+  .copyright {
+    font-size: 14px;
+    color: $secondary-text-color;
+    min-width: 250px;
+    text-align: right;
+    margin-bottom: 0;
+  }
+}
+
+// Botones y enlaces
+button, a {
+  font-family: 'Share Tech Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background-color: transparent;
+  border: 1px solid $color-cyan;
+  color: $color-cyan;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    background-color: rgba(0,229,255,0.1);
+    box-shadow: $glow-cyan;
+  }
+}
+
+// Fondo y contenedores
+.page-body,
+.page-body-wrapper,
+.container-fluid {
+  background-color: $primary-bg-color;
+}
+
+.page-title {
+  padding: 20px 0;
+}
+
+.page-body-wrapper {
+  padding: 0 15px;
+}

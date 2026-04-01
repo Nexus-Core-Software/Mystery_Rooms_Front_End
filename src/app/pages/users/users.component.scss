@@ -1,0 +1,37 @@
+::ng-deep app-modal .modal-content {
+    background-color: #1F2937;
+}
+
+.btn-purple {
+    background-color: #8F34E6;
+    color: #ffff; 
+    font-size: 15px; 
+
+    &:hover {
+        background-color: rgb(174, 114, 212);
+    }
+}
+
+:host {
+    display: block;
+   
+    color: #ffff; 
+
+    footer {
+        background-color: #1F2937; 
+    }
+  }
+
+::ng-deep .page-body {
+    
+    color: #000000 !important; 
+    min-height: 100vh;
+    padding: 0px;
+    margin-top: 10px;
+
+}
+::ng-deep .footer {
+    background-color: #8F34E6 !important; 
+    color: #000000 !important; 
+}
+
