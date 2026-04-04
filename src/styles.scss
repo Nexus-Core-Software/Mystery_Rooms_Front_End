@@ -9,6 +9,10 @@
 /* Google Fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Exo+2:wght@300;400;600&display=swap');
 
+html, body {
+  background-color: #030810 !important;
+}
+
 :root {
   /* ── Fondos ── */
   --background:        #030810;   /* bg-deep: negro azulado profundo */

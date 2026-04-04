@@ -12,19 +12,22 @@ import { AuthGoogleService } from "../../services/auth-google.service";
   templateUrl: './my-account.component.html',
   styleUrl: './my-account.component.scss',
 })
-export class MyAccountComponent implements OnInit {
+export class MyAccountComponent {
   public userName: string = '';
-  private service = inject(AuthService);
-  public authGoogleService = inject(AuthGoogleService)
+  public dropdownOpen = false;
 
-  constructor(public router: Router) {
-    let user = localStorage.getItem('auth_user');
-    if(user) {
+  constructor(private router: Router,
+              private service: AuthService,
+              private authGoogleService: AuthGoogleService) {
+    const user = localStorage.getItem('auth_user');
+    if (user) {
       this.userName = JSON.parse(user)?.name;
-    } 
+    }
   }
 
-  ngOnInit() {}
+  toggleDropdown() {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
 
   logout() {
     this.authGoogleService.logout();
