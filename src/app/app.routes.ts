@@ -18,6 +18,7 @@ import { ProfileUpdateComponent } from './components/profile/profile-update/prof
 // import { GaleryComponent } from './pages/galery/galery.component';
 import { ApiComponent } from './components/api/api.component';
 import { TokenExpiredComponent } from './pages/token-expired/token-expired.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 export const routes: Routes = [
   {
@@ -84,6 +85,18 @@ export const routes: Routes = [
             IRoleType.user
           ],
           name: 'Dashboard',
+          showInSidebar: false
+        }
+      },
+      {
+        path: 'landing',
+        component: LandingPageComponent,
+        data: { 
+          authorities: [
+            IRoleType.superAdmin,
+            IRoleType.user
+          ],
+          name: 'Landing',
           showInSidebar: false
         }
       },

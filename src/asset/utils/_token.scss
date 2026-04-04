@@ -1,0 +1,47 @@
+// 🎨 Mystery Rooms — Design Tokens
+
+// Colores base
+$body-bg: #030810;        // Fondo principal
+$panel-bg: #07111f;       // Paneles y barras
+$card-bg: #0b1a2e;        // Tarjetas y modales
+
+// Texto
+$text-primary: #e0f7fa;
+$text-secondary: #b0bec5;
+$text-muted: #607d8b;
+$text-title: #ffffff;
+
+// Colores de acento
+$color-cyan: #00e5ff;     // Dominante
+$color-cyan-muted: #00bcd4;
+$color-amber: #ffab00;    // Advertencias / highlights
+$color-success: #00e676;
+$color-danger: #ff1744;
+$color-purple-ai: #ce93d8;
+
+// Bordes y glows
+$border-standard: rgba(0,229,255,0.18);
+$border-hover: rgba(0,229,255,0.4);
+$glow-cyan: 0 0 12px rgba(0,229,255,0.55), 0 0 30px rgba(0,229,255,0.2);
+$glow-amber: 0 0 12px rgba(255,171,0,0.55);
+$glow-success: 0 0 12px rgba(0,230,118,0.55);
+$glow-danger: 0 0 12px rgba(255,23,68,0.55);
+
+// Tipografías
+$font-orbitron: 'Orbitron', sans-serif;
+$font-sharetech: 'Share Tech Mono', monospace;
+$font-exo: 'Exo 2', sans-serif;
+
+// Tamaños y espaciado
+$radius-sm: 2px;
+$radius-md: 4px;
+$radius-lg: 6px;
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+
+// Animaciones
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;

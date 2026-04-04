@@ -4,48 +4,66 @@
     align-items: center;
     margin-top: 0;
 
-        i {
-            color: white;
-            margin-right: 10px;
-        }
+    i {
+        color: white;
+        margin-right: 10px;
+    }
 
-        .media-body {
-            color: white; /* El texto del usuario será blanco */
-            span {
-                color: white;
-                display: flex;
-                align-items: center;
-            
-                i {
-                    margin-left: 5px; /* Espacio entre el texto y el ícono */
-                }
+    .media-body {
+        color: white; /* El texto del usuario será blanco */
+        span {
+            color: white;
+            display: flex;
+            align-items: center;
+        
+            i {
+                margin-left: 5px; /* Espacio entre el texto y el ícono */
             }
         }
     }
+}
 
-    ul.profile-dropdown {
-    background-color: black; /* Fondo negro para la lista */
-    padding: 0;
-    margin: 0;
+.profile-container {
+  position: relative; // importante para que el dropdown se posicione bien
+}
+
+ul.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #07111f;
+  border: 1px solid rgba(0,229,255,0.18);
+  border-radius: 4px;
+  min-width: 180px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+    &.show {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
 
     li {
         display: flex;
         align-items: center;
         padding: 10px 15px;
-        color: white; /* El texto será blanco */
-        transition: background-color 0.3s;
+        color: e0f7fa;
+        cursor: pointer;
 
         &:hover {
-        background-color: #333; /* Fondo gris oscuro al pasar el cursor */
+            background-color: rgba(0,229,255,0.06);
+            color: #00e5ff;
         }
 
         i {
-        color: white;
-        margin-right: 10px; /* Espacio a la derecha del ícono */
-        }
-
-        span {
-        color: white;
+            color: 00e5ff;
+            margin-right: 10px;
         }
     }
 }
